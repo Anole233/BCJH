@@ -22,9 +22,11 @@
 // 关于金币获得：
 // 例：skill->coinBuff += 30; // 金币获得+30%
 
+
+/*****************************************************/
 void toolEquipped(Chef *chef) {
 
-   // return; // 以下为示例代码，可自行修改。完成后注释此行。
+  //  return; // 以下为示例代码，可自行修改。完成后注释此行。
 
     ///////////// 不希望任何厨师装备厨具：
 
@@ -34,14 +36,18 @@ void toolEquipped(Chef *chef) {
 
     auto skill = &chef->skill; // 这句不用管，放着就好。
 
-    if (chef->name == "达浪") {              // 金锄头
-        skill->ability.add(30);              // 全技法+30
-        skill->materialBuff.vegetable += 15; // 蔬菜售价+15%
+    if (chef->name == "常鹅") {              // 吃饱兔餐盘
+        skill->ability.knife += 150; // 技法+150,
+        skill->abilityBuff.steam += 25; // 烤售价+25%
         chef->tool = NO_TOOL;                // 不允许装备其他厨具
     }
-    if (chef->name == "宋书汐汐") {    // 幸福礼花炮
-        skill->ability.stirfry += 150; // 炒技法+150
-        skill->abilityBuff.bake += 25; // 烤售价+25%
+    if (chef->name == "老君") {    // 兔兔高温瓶
+        skill->ability.boil += 150; // 技法+150,
+        skill->abilityBuff.stirfry += 25; // 烤售价+25%
+        chef->tool = NO_TOOL;          // 不允许装备其他厨具
+    }
+    if (chef->name == "姒露") {    // 霞姬霸捣药罐
+        skill->ability.add(75);     // 全技法+30
         chef->tool = NO_TOOL;          // 不允许装备其他厨具
     }
 }
