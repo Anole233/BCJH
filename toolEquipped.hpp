@@ -30,7 +30,7 @@ void toolEquipped(Chef *chef) {
 
     ///////////// 不希望任何厨师装备厨具：
 
-    chef->tool = NO_TOOL;
+   // chef->tool = NO_TOOL;
 
     ///////////// 自定义厨师装备的厨具：
 
